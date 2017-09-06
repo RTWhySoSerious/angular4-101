@@ -50,7 +50,6 @@ src
 * The second way is to do it manualy. You will need:
 ```
 component-name.component.ts | app.modules.ts | app.component.html  
-
 ```
 
 ```js
@@ -66,6 +65,6 @@ import { Component } from '@angular/core';
 })
 
 export class ComponentName{
-  title = "List of courses";
+  title = "Some title";
 }
 ```
