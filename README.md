@@ -38,28 +38,34 @@ In Angular 4 you should name components like this
 There are 2 ways how to do that:
 * The first way is to use Angular CLI. Just run: `ng g c component-name`
 This way you will have a folder in you src directory
-DIRECTORY STRUCTURE
--------------------
 
 ```
-common
-    config/              contains shared configurations
-    mail/                contains view files for e-mails
-    models/              contains model classes used in both backend and frontend
-    tests/               contains tests for common classes    
+src
+    component-name/
+         component-name.component.css
+         component-name.component.html
+         component-name.component.ts
+         
 ```
-* The second way is to do it manualy:
+* The second way is to do it manualy. You will need:
+```
+component-name.component.ts | app.modules.ts | app.component.html  
+
+```
 
 ```js
-// courses.component.ts
+/*
+  fileNmae:  component-name.component.ts
+  This is an actual component.
+*/
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'courses',
+  selector: 'component-name',
   template: '<h2>{{ Title: + {{ title }} }}</h2>'
 })
 
-export class CoursesComponent{
+export class ComponentName{
   title = "List of courses";
 }
 ```
