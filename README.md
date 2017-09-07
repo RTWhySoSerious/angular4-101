@@ -31,12 +31,11 @@ ng g c component-name
 or `ng generate component component-name` 
 
 # Syntax overview
-In Angular 4 you should name components like this
-`yourComponentName.component.ts`
 
 ## Define a component
-There are 2 ways how to do that:
-* The first way is to use Angular CLI. Just run: `ng g c newComponent`
+There are 2 ways how to define a component:
+
+### The first way is to use Angular CLI. Just run: `ng g c newComponent`
 Angular CLI will create everything for you:
 ```
 create src\app\new-component\new-component.component.css
@@ -80,7 +79,7 @@ In order to use a new component in your HTML markup, you can look at ` new-compo
   //...
 ```
 So your component HTML element will be: `<app-new-component></app-new-component>`
-* The second way is to do it manualy. You will need:
+### The second way is to do it manualy. You will need:
 ```
 component-name.component.ts | app.modules.ts | app.component.html  
 ```
