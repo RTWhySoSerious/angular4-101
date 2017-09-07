@@ -22,6 +22,7 @@ import { Component } from '@angular/core';
       </tr>
     </table>
     <button class="btn btn-primary" [class.active]="isActive">Save</button>
+    <button [style.backgroundColor]="isActive ? 'green' : 'red' ">New button</button>
   `
 })
 export class CoursesComponent{
@@ -31,7 +32,7 @@ export class CoursesComponent{
   colSpan = 2;
   isActive = true;
 
-  
+
   constructor(service: CoursesService) {// dependecies injecting
     this.courses = service.getCourses();
   }
