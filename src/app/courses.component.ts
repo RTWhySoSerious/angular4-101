@@ -11,6 +11,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'courses',
   template:`
+  <div class="row">
     <h2>{{'List of '+ title}}</h2>
     <img src="{{ imageUrl }}" />
     <img [src]="imageUrl" />
@@ -26,9 +27,20 @@ import { Component } from '@angular/core';
     </table>
     <button class="btn btn-primary" [class.active]="isActive">Save</button>
     <button [style.backgroundColor]="isActive ? 'green' : 'red' ">New button</button>
-    <div (click)="onDivClicked()">
-      <button (click)="onSave($event)">Save</button>
-    </div>  
+  </div>
+  <div class="row">
+    <div class="container">
+      <div (click)="onDivClicked()">
+        <button class="btn btn-warning" (click)="onSave($event)">Save</button>
+      </div>
+      <div>
+        <input class="input" (keyup)="onKeyUp($event)"/>
+      </div> 
+      <div>
+      <input class="input" (keyup.enter)="onKeyUpFiltered()"/>
+    </div> 
+    </div>
+  </div>
   `
 })
 export class CoursesComponent{
@@ -42,9 +54,14 @@ export class CoursesComponent{
     console.log($event);
     console.log('Message');
   }
-
   onDivClicked() {
     console.log('DIV');
+  }
+  onKeyUp($event) {
+    if($event.keyCode === 13) console.log('Enter was pressed');
+  }
+  onKeyUpFiltered(){
+    console.log('Enter was pressed');
   }
 
 
