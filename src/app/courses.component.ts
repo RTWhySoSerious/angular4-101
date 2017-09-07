@@ -1,3 +1,4 @@
+import { CoursesService } from './courses.service';
 
 import { Component } from '@angular/core';
 
@@ -14,5 +15,9 @@ import { Component } from '@angular/core';
 })
 export class CoursesComponent{
   title = 'courses';
-  courses = ['Angular','Vue','React']
+  courses;
+
+  constructor(service: CoursesService) {// dependecies injecting
+    this.courses = service.getCourses();
+  }
 }
