@@ -37,8 +37,11 @@ import { Component } from '@angular/core';
         <input class="input" (keyup)="onKeyUp($event)"/>
       </div> 
       <div>
-      <input class="input" (keyup.enter)="onKeyUpFiltered()"/>
-    </div> 
+        <input class="input" (keyup.enter)="onKeyUpFiltered()"/>
+      </div>
+      <div>
+        <input class="input" #email (keyup.enter)="onKeyUp2(email.value)"/>
+      </div> 
     </div>
   </div>
   `
@@ -62,6 +65,10 @@ export class CoursesComponent{
   }
   onKeyUpFiltered(){
     console.log('Enter was pressed');
+  }
+
+  onKeyUp2(email) {
+    console.log(email);
   }
 
 
