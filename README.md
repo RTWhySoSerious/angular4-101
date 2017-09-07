@@ -35,7 +35,7 @@ or `ng generate component component-name`
 ## Define a component
 There are 2 ways how to define a component:
 
-### The first way is to use Angular CLI. Just run: `ng g c newComponent`
+### The easiest way is to use Angular CLI. Just run: `ng g c newComponent`
 Angular CLI will create everything for you:
 ```
 create src\app\new-component\new-component.component.css
@@ -56,7 +56,7 @@ src
          
 ```
 
-And your `app.module.ts` file will be updated:
+And your `app.module.ts` file will be automatically updated:
 ```js
 /*
   FileName: app.module.ts
@@ -79,24 +79,4 @@ In order to use a new component in your HTML markup, you can look at ` new-compo
   //...
 ```
 So your component HTML element will be: `<app-new-component></app-new-component>`
-### The second way is to do it manualy. You will need:
-```
-component-name.component.ts | app.modules.ts | app.component.html  
-```
 
-```js
-/*
-  fileName:  component-name.component.ts
-  This is an actual component.
-*/
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'component-name',
-  template: '<h2>{{ Title: + {{ title }} }}</h2>'
-})
-
-export class ComponentName{
-  title = "Some title";
-}
-```
