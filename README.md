@@ -80,3 +80,26 @@ In order to use a new component in your HTML markup, you can look at ` new-compo
 ```
 So your component HTML element will be: `<app-new-component></app-new-component>`
 
+## ngFor directive
+`*ngFor="let item of items"`
+
+```js
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'courses',
+  template:`
+    <h2>{{'List of '+ title}}</h2>
+    <ul>
+      <li *ngFor="let course of courses">
+        {{course}}
+      </li>
+    </ul>
+  `
+})
+export class CoursesComponent{
+  title = 'courses';
+  courses = ['Angular','Vue','React']
+}
+```
+
