@@ -5,6 +5,9 @@ import { Component } from '@angular/core';
 // <img [src]="imageUrl" /> => is better for img
 // this is a one way data-binding (if smth changes in the component, it will change in DOM)
 // if smth changes in the DOM it will not change in the component
+//class binding, style binding and attr binding - it is called property binding 
+// event bubbling => child then parent
+// $event.stopPropagation() => stops event bubling 
 @Component({
   selector: 'courses',
   template:`
@@ -23,6 +26,9 @@ import { Component } from '@angular/core';
     </table>
     <button class="btn btn-primary" [class.active]="isActive">Save</button>
     <button [style.backgroundColor]="isActive ? 'green' : 'red' ">New button</button>
+    <div (click)="onDivClicked()">
+      <button (click)="onSave($event)">Save</button>
+    </div>  
   `
 })
 export class CoursesComponent{
@@ -31,6 +37,15 @@ export class CoursesComponent{
   imageUrl = "http://lorempixel.com/400/200";
   colSpan = 2;
   isActive = true;
+  onSave($event) {
+    $event.stopPropagation();
+    console.log($event);
+    console.log('Message');
+  }
+
+  onDivClicked() {
+    console.log('DIV');
+  }
 
 
   constructor(service: CoursesService) {// dependecies injecting
