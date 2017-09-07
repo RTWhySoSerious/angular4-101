@@ -42,6 +42,10 @@ import { Component } from '@angular/core';
       <div>
         <input class="input" #email (keyup.enter)="onKeyUp2(email.value)"/>
       </div> 
+      <h1>Two-way data binding</h1>
+      <div>
+        <input [(ngModel)]="username" class="input" (keyup.enter)="onKeyUp3()" />
+      </div>
     </div>
   </div>
   `
@@ -49,9 +53,11 @@ import { Component } from '@angular/core';
 export class CoursesComponent{
   title = 'courses';
   courses;
-  imageUrl = "http://lorempixel.com/400/200";
+  imageUrl = "http://lorempixel.com/200/100";
   colSpan = 2;
   isActive = true;
+  username = "RT Sullivan";
+
   onSave($event) {
     $event.stopPropagation();
     console.log($event);
@@ -69,6 +75,10 @@ export class CoursesComponent{
 
   onKeyUp2(email) {
     console.log(email);
+  }
+
+  onKeyUp3() {
+    console.log(this.username);
   }
 
 
