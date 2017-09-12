@@ -132,6 +132,8 @@ or for a src attribute, like:
 ```html
 <img [src]="imageUrl" />
 ```
+# Property binding 
+Class binding, style binding and attribute binding: is called property binding. 
 ## Class binding
 
 ```html
@@ -150,3 +152,54 @@ So it means that, if `isActive` is true, so the button's attribute `style.backgr
 ```js
 isActive = true;
 ```
+
+## Event binding
+### Event bubbling
+
+```html
+<div (click)="onDivClicked()">
+  <button (click)="onSave()">Save</button>
+</div>
+```
+
+```js
+onSave() {
+  console.log('Log from button');
+}
+onDivClicked() {
+  console.log('Log from div');
+}
+```
+If you click on the button the output in console will be:
+```
+Log from div
+```
+```
+Log from button
+```
+this is called event bubbling.
+`$event.stopPropagation()` stops event bubbling
+```html
+<div (click)="onDivClicked()">
+  <button (click)="onSave($event)">Save</button>
+</div>
+```
+
+```js
+onSave() {
+  $event.stopPropagation();
+  console.log('Log from button');
+}
+onDivClicked() {
+  console.log('Log from div');
+}
+```
+The output in console will be:
+```
+Log from button
+```
+
+
+
+
+
