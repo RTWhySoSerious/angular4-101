@@ -132,4 +132,21 @@ or for a src attribute, like:
 ```html
 <img [src]="imageUrl" />
 ```
+## Class binding
 
+```html
+<button class="btn btn-primary" [class.active]="isActive">Save</button>
+```
+```js
+isActive = true;
+```
+
+## Style binding
+
+```html
+<button [style.backgroundColor]="isActive ? 'green' : 'red' ">New button</button>
+```
+So it means that, if `isActive` is true, so the button's attribute `style.backgroundColor` will be green, and on the opposite, it will be red.
+```js
+isActive = true;
+```
