@@ -1,6 +1,7 @@
 import { CoursesService } from './courses.service';
 
 import { Component } from '@angular/core';
+
 // <h2>{{'List of '+ title}}</h2> => is better for text
 // <img [src]="imageUrl" /> => is better for img
 // this is a one way data-binding (if smth changes in the component, it will change in DOM)
@@ -10,45 +11,7 @@ import { Component } from '@angular/core';
 // $event.stopPropagation() => stops event bubling 
 @Component({
   selector: 'courses',
-  template:`
-  <div class="row">
-    <h2>{{'List of '+ title}}</h2>
-    <img src="{{ imageUrl }}" />
-    <img [src]="imageUrl" />
-    <ul>
-      <li *ngFor="let course of courses">
-        {{course}}
-      </li>
-    </ul>
-    <table>
-      <tr>
-        <td [attr.colspan]="colSpan"></td>
-      </tr>
-    </table>
-    <button class="btn btn-primary" [class.active]="isActive">Save</button>
-    <button [style.backgroundColor]="isActive ? 'green' : 'red' ">New button</button>
-  </div>
-  <div class="row">
-    <div class="container">
-      <div (click)="onDivClicked()">
-        <button class="btn btn-warning" (click)="onSave($event)">Save</button>
-      </div>
-      <div>
-        <input class="input" (keyup)="onKeyUp($event)"/>
-      </div> 
-      <div>
-        <input class="input" (keyup.enter)="onKeyUpFiltered()"/>
-      </div>
-      <div>
-        <input class="input" #email (keyup.enter)="onKeyUp2(email.value)"/>
-      </div> 
-      <h1>Two-way data binding</h1>
-      <div>
-        <input [(ngModel)]="username" class="input" (keyup.enter)="onKeyUp3()" />
-      </div>
-    </div>
-  </div>
-  `
+  templateUrl: './courses.component.html',
 })
 export class CoursesComponent{
   title = 'courses';
