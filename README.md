@@ -134,11 +134,21 @@ imports: [
   //...
   FormsModule,
   //...
-    ],
+ ],
 ```
 
 ```html
-<input [(ngModel)]="username" />
+<input [(ngModel)]="username" class="input" />
+```
+
+```js
+export class CoursesComponent{
+  //...
+  username = "RT Sullivan";
+  //...
+  /*
+    later you can access username with this.username
+  */
 ```
 
 ## Attributes of DOM elements
