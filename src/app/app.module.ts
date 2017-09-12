@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { CoursesComponent } from "./courses/courses.component";
 import { PipesComponent } from './pipes/pipes.component';
 import { CustomPipesComponent } from './custom-pipes/custom-pipes.component';
+import { FavComponent } from './fav/fav.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CustomPipesComponent } from './custom-pipes/custom-pipes.component';
     CoursesComponent,
     PipesComponent,
     CustomPipesComponent,
-    SummaryPipe
+    SummaryPipe,
+    FavComponent
   ],
   imports: [
     BrowserModule,
