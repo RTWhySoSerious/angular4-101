@@ -121,6 +121,7 @@ export class CoursesComponent{
 }
 ```
 ## ngModel directive
+`[(ngModel)]="username"`
 
 ```js
 /*
