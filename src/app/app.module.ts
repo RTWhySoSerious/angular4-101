@@ -5,11 +5,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CoursesComponent } from "./courses/courses.component";
+import { PipesComponent } from './pipes/pipes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoursesComponent,
+    PipesComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,26 @@
+<h1>This is pipes component</h1>
+
+<ul>
+  <li>
+    Pipe uppercase: {{course.title | uppercase}}
+  </li>
+  <li>
+    Pipe lowercase: {{course.title | lowercase}}
+  </li>
+  <li>
+    Two pipes lowercase and uppercase: {{course.title | lowercase | uppercase}}
+  </li>
+  <li>
+    {{course.students | number}}
+  </li>
+  <li>
+    {{course.rating | number:'1.2-3'}} (number:'int.min-max')
+  </li>
+  <li>
+    {{course.price | currency:'CNY':true:'3.2-2'}}
+  </li>
+  <li>
+    {{course.releaseDate | date:'shortDate'}}
+  </li>
+  <h5><a href="http://angular.io">All the available pipes</a></h5>
+</ul>
