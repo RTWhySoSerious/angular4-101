@@ -24,11 +24,18 @@ Navigate to `http://localhost:4200/`. The app will automatically reload if you c
 
 ## Angular CLI cool tricks
 
-To generate a new component. run:
+To generate a new component run:
 ```
 ng g c component-name
 ```
 or `ng generate component component-name` 
+
+To generate a new service run:
+```
+ng g s service-name
+```
+or `ng generate service service-name` 
+
 
 # Syntax overview
 
@@ -101,5 +108,17 @@ export class CoursesComponent{
   title = 'courses';
   courses = ['Angular','Vue','React']
 }
+```
+
+## Attributes of DOM elements
+
+There are different ways of how we can do data binding. This is a small example of a one way data-binding. One way data-binding means that if smth changes in the component, it will change in DOM, but if smth changes in the DOM it will not change in the component. So you can use one way data binding for plain text like:
+
+```html
+<h2>{{'List of '+ title}}</h2>
+```
+or for a src attribute, like:
+```html
+<img [src]="imageUrl" /> => is better for img
 ```
 
