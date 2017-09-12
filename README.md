@@ -36,6 +36,17 @@ ng g s service-name
 ```
 or `ng generate service service-name` 
 
+## Adding extra libraries (Bootstrap)
+
+```
+npm install bootsrtap --save
+```
+`--save` saves this dependency into the package.json file, so later, you can run `npm install` and all the xtra libraries will be installed.
+
+### Later you have to import external library in your `src/styles.css` file:
+```css
+@import "~bootstrap/dist/css/bootstrap.css";
+```
 
 # Syntax overview
 
@@ -119,6 +130,6 @@ There are different ways of how we can do data binding. This is a small example 
 ```
 or for a src attribute, like:
 ```html
-<img [src]="imageUrl" /> => is better for img
+<img [src]="imageUrl" />
 ```
 
