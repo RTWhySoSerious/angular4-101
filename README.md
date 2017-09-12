@@ -120,6 +120,26 @@ export class CoursesComponent{
   courses = ['Angular','Vue','React']
 }
 ```
+## ngModel directive
+
+```js
+/*
+  src/app/app.module.ts
+*/
+//...
+import { FormsModule } from '@angular/forms';
+//...
+
+imports: [
+  //...
+  FormsModule,
+  //...
+    ],
+```
+
+```html
+<input [(ngModel)]="username" />
+```
 
 ## Attributes of DOM elements
 
