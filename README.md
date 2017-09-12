@@ -177,8 +177,8 @@ Log from div
 ```
 Log from button
 ```
-this is called event bubbling.
-`$event.stopPropagation()` stops event bubbling
+This is called event bubbling.
+### `$event.stopPropagation()` stops event bubbling:
 ```html
 <div (click)="onDivClicked()">
   <button (click)="onSave($event)">Save</button>
