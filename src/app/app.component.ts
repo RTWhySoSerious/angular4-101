@@ -11,4 +11,8 @@ export class AppComponent {
     title: "Title",
     isFavorite: true
   }
+
+  onFavChanged() {
+    console.log('Was clicked');
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'fav',
@@ -7,6 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class FavComponent implements OnInit {
   @Input('isFavorite') isFav: boolean;
+  @Output() clickToChange = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
@@ -14,6 +16,7 @@ export class FavComponent implements OnInit {
 
   onClick() {
     this.isFav = !this.isFav;
+    this.clickToChange.emit();
   }
 
 }
