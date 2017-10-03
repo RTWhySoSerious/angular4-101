@@ -6,10 +6,14 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./fav.component.css']
 })
 export class FavComponent implements OnInit {
-  @Input() isFav: boolean;
+  @Input('isFavorite') isFav: boolean;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onClick() {
+    this.isFav = !this.isFav;
   }
 
 }
