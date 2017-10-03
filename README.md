@@ -229,6 +229,79 @@ The output in console will be:
 ```
 Log from button
 ```
+### `emit()` Raising custom events from components:
+
+```js
+/*
+  src/app/app.component.ts
+*/
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'Angular app';
+  post = {
+    title: "Title",
+    isFavorite: true
+  }
+
+  onFavChanged() {
+    console.log('Was clicked');
+  }
+}
+```
+In the `app.component.ts` file you need to define a function that you want to call (`onFavChanged`)
+```html
+<!--src/app/app.component.html-->
+  <fav [isFavorite]="post.isFavorite" (clickToChange)="onFavChanged()"></fav>
+```
+In the `app.component.html` file you have to assign an event (`clickToChange`) that will trigger the (`onFavChanged`) function
+
+```html
+<!--src/app/fav.component.html-->
+<span
+  class="glyphicon"
+  [class.glyphicon-star]="isFav"
+  [class.glyphicon-star-empty]="!isFav"
+  (click)="onClick()"
+></span>
+```
+In the `fav.component.html` file is a markup of a star that will be changed when you click on it
+```js
+/*
+  src/app/fav.component.ts
+*/
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
+@Component({
+  selector: 'fav',
+  templateUrl: './fav.component.html',
+  styleUrls: ['./fav.component.css']
+})
+export class FavComponent implements OnInit {
+  @Input('isFavorite') isFav: boolean;
+  @Output() clickToChange = new EventEmitter();
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+  onClick() {
+    this.isFav = !this.isFav;
+    this.clickToChange.emit();
+  }
+
+}
+
+```
+In the `fav.component.ts` file you have to emit an event (`clickToChange`) that will trigger the (`onFavChanged`) function in the `app.component.ts` file
+
+### So when you click on the star, the `this.clickToChange.emit()` (`fav.component.ts` file) fires, and makes the function `onFavChanged()` (`app.component.ts` file) go off.
 
 
 
